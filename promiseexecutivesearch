@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Promise Bassey Executive Search | Leadership Recruitment</title>
+<meta name="description" content="Promise Bassey Executive Search places senior leaders and critical hires with organisations that cannot afford a wrong appointment. Confidential, retained, relationship-led.">
+<meta property="og:title" content="Promise Bassey Executive Search">
+<meta property="og:description" content="Confidential executive search for organisations that cannot afford a wrong appointment.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b1424">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b1424;
+  --navy-2:#111d33;
+  --navy-3:#18274a;
+  --gold:#c6a15b;
+  --gold-soft:#e3cb97;
+  --ivory:#f6f2ea;
+  --paper:#fbf9f4;
+  --ink:#0e1626;
+  --muted:#5d6678;
+  --line:rgba(14,22,38,.12);
+  --line-dark:rgba(255,255,255,.12);
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,100% - 48px);margin-inline:auto}
+.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(2.1rem,4.4vw,3.4rem)}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 30px;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;border:1px solid var(--gold);transition:.35s ease;cursor:pointer;font-family:var(--sans);background:transparent}
+.btn.solid{background:var(--gold);color:var(--navy)}
+.btn.solid:hover{background:var(--gold-soft);border-color:var(--gold-soft)}
+.btn.ghost{color:var(--ivory)}
+.btn.ghost:hover{background:var(--gold);color:var(--navy)}
+.btn svg{width:16px;height:16px;transition:transform .35s}
+.btn:hover svg{transform:translateX(4px)}
+
+/* NAV */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.4s ease;padding:22px 0}
+header.scrolled{background:rgba(11,20,36,.94);backdrop-filter:blur(12px);padding:14px 0;border-bottom:1px solid var(--line-dark)}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;flex-direction:column;line-height:1;color:var(--ivory)}
+.brand b{font-family:var(--serif);font-size:1.55rem;font-weight:500;letter-spacing:.02em}
+.brand span{font-size:.58rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-top:7px}
+nav ul{display:flex;gap:38px;list-style:none;align-items:center}
+nav a.link{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,242,234,.82);position:relative;padding:6px 0}
+nav a.link::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:.35s}
+nav a.link:hover::after{width:100%}
+nav a.link:hover{color:#fff}
+.nav-cta{padding:11px 22px;font-size:.7rem}
+.burger{display:none;background:none;border:0;width:34px;height:24px;position:relative;cursor:pointer}
+.burger i{position:absolute;left:0;right:0;height:1.5px;background:var(--ivory);transition:.3s}
+.burger i:nth-child(1){top:4px}.burger i:nth-child(2){top:11px}.burger i:nth-child(3){top:18px}
+.burger.open i:nth-child(1){top:11px;transform:rotate(45deg)}
+.burger.open i:nth-child(2){opacity:0}
+.burger.open i:nth-child(3){top:11px;transform:rotate(-45deg)}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:
+ radial-gradient(1000px 600px at 85% 20%,rgba(198,161,91,.14),transparent 60%),
+ radial-gradient(800px 600px at 0% 100%,rgba(35,60,110,.55),transparent 60%),
+ linear-gradient(160deg,#0b1424 0%,#0e1a30 55%,#101f3b 100%);color:var(--ivory);overflow:hidden;padding:150px 0 100px}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line-dark) 1px,transparent 1px),linear-gradient(90deg,var(--line-dark) 1px,transparent 1px);background-size:90px 90px;opacity:.35;mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
+.hero h1{font-size:clamp(2.9rem,7vw,5.6rem);margin:26px 0 30px}
+.hero h1 em{font-style:italic;color:var(--gold-soft)}
+.hero p.lead{font-size:1.12rem;color:rgba(246,242,234,.78);max-width:560px;font-weight:300}
+.hero-actions{display:flex;gap:18px;flex-wrap:wrap;margin-top:44px}
+.seal{position:relative;aspect-ratio:1;max-width:380px;margin-inline:auto;width:100%}
+.seal .ring{position:absolute;inset:0;border:1px solid rgba(198,161,91,.55);border-radius:50%}
+.seal .ring.r2{inset:7%;border-color:rgba(198,161,91,.28)}
+.seal .ring.r3{inset:15%;border-color:rgba(198,161,91,.15);border-style:dashed;animation:spin 60s linear infinite}
+.seal .mono{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.seal .mono div{font-family:var(--serif);font-size:clamp(4rem,9vw,6.6rem);color:var(--gold);line-height:1;letter-spacing:.04em}
+.seal .mono small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:rgba(246,242,234,.65);margin-top:16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-size:.62rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(246,242,234,.5);display:flex;flex-direction:column;align-items:center;gap:12px}
+.scroll-hint::after{content:"";width:1px;height:42px;background:linear-gradient(var(--gold),transparent);animation:drip 2.2s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* STRIP */
+.strip{background:var(--navy-2);color:var(--ivory);border-block:1px solid var(--line-dark)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip .item{padding:34px 28px;border-left:1px solid var(--line-dark)}
+.strip .item:first-child{border-left:0;padding-left:0}
+.strip .item b{display:block;font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--gold-soft);margin-bottom:4px}
+.strip .item span{font-size:.82rem;color:rgba(246,242,234,.62)}
+
+section{padding:130px 0}
+.sec-head{max-width:720px;margin-bottom:70px}
+.sec-head h2{margin:20px 0 22px}
+.sec-head p{color:var(--muted);font-size:1.05rem}
+
+/* ABOUT */
+.about{background:var(--paper)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:start}
+.about h2 em{font-style:italic;color:var(--gold)}
+.about-copy p{font-size:1.06rem;color:#2b3447;margin-bottom:22px}
+.about-copy p:first-child::first-line{font-weight:500}
+.sign{margin-top:36px;padding-top:28px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.sign b{font-family:var(--serif);font-size:1.7rem;font-weight:500}
+.sign span{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+
+.portrait{position:relative;margin:48px 0 0 14px;max-width:400px}
+.portrait::before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid var(--gold);z-index:0}
+.portrait img{position:relative;z-index:1;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 30%;filter:saturate(.92) contrast(1.03)}
+.portrait figcaption{position:relative;z-index:1;margin-top:18px;font-family:var(--serif);font-size:1.35rem}
+.portrait figcaption span{display:block;font-family:var(--sans);font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+/* PRACTICES */
+.practices{background:var(--ivory)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
+.card{padding:46px 38px 50px;background:var(--paper);border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;transition:.45s ease;overflow:hidden}
+.card:nth-child(3n){border-right:0}
+.card:nth-last-child(-n+3){border-bottom:0}
+.card::before{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--gold);transition:.5s ease}
+.card:hover{background:var(--navy);color:var(--ivory)}
+.card:hover::before{width:100%}
+.card:hover p{color:rgba(246,242,234,.7)}
+.card .num{font-family:var(--serif);font-size:1rem;color:var(--gold);letter-spacing:.2em}
+.card h3{font-size:1.75rem;margin:22px 0 14px}
+.card p{font-size:.95rem;color:var(--muted);transition:.45s}
+
+/* PROCESS */
+.process{background:var(--navy);color:var(--ivory);position:relative;overflow:hidden}
+.process::after{content:"";position:absolute;right:-200px;top:-200px;width:600px;height:600px;border-radius:50%;border:1px solid rgba(198,161,91,.18)}
+.process .sec-head p{color:rgba(246,242,234,.68)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.step{padding:0 34px 0 0;position:relative}
+.step::before{content:"";position:absolute;top:22px;left:60px;right:14px;height:1px;background:var(--line-dark)}
+.step:last-child::before{display:none}
+.step .dot{width:46px;height:46px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.15rem;color:var(--gold);background:var(--navy);position:relative;z-index:1}
+.step h3{font-size:1.55rem;margin:28px 0 12px}
+.step p{font-size:.93rem;color:rgba(246,242,234,.66)}
+
+/* STANDARDS */
+.standards{background:var(--paper)}
+.std-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px}
+.std-list{list-style:none}
+.std-list li{display:grid;grid-template-columns:44px 1fr;gap:20px;padding:30px 0;border-bottom:1px solid var(--line)}
+.std-list li:first-child{border-top:1px solid var(--line)}
+.std-list svg{width:30px;height:30px;color:var(--gold);margin-top:3px}
+.std-list h3{font-size:1.45rem;margin-bottom:6px}
+.std-list p{font-size:.95rem;color:var(--muted)}
+
+/* AUDIENCES */
+.aud{background:var(--ivory)}
+.aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.panel{padding:60px 52px;background:var(--navy);color:var(--ivory);position:relative}
+.panel.alt{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+.panel h3{font-size:2.3rem;margin:18px 0 18px}
+.panel p{color:rgba(246,242,234,.72);margin-bottom:28px}
+.panel.alt p{color:var(--muted)}
+.panel ul{list-style:none;margin-bottom:34px}
+.panel li{padding:11px 0 11px 28px;position:relative;font-size:.95rem;border-top:1px solid var(--line-dark)}
+.panel.alt li{border-color:var(--line)}
+.panel li::before{content:"";position:absolute;left:0;top:21px;width:12px;height:1px;background:var(--gold)}
+.panel .btn.ghost2{color:var(--ink);border-color:var(--ink)}
+.panel .btn.ghost2:hover{background:var(--ink);color:var(--ivory)}
+
+/* CONTACT */
+.contact{background:linear-gradient(160deg,#0b1424,#111d33);color:var(--ivory);position:relative}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:90px}
+.contact h2{margin:20px 0 26px}
+.contact .intro{color:rgba(246,242,234,.72);margin-bottom:46px;max-width:430px}
+.detail{padding:22px 0;border-top:1px solid var(--line-dark)}
+.detail span{display:block;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.detail a,.detail p{font-family:var(--serif);font-size:1.5rem;word-break:break-word}
+.detail a:hover{color:var(--gold-soft)}
+form{background:rgba(255,255,255,.035);border:1px solid var(--line-dark);padding:50px 46px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.field{margin-bottom:28px}
+label{display:block;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(246,242,234,.65);margin-bottom:10px}
+input,select,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.25);color:var(--ivory);font-family:var(--sans);font-size:1rem;padding:10px 0 12px;outline:none;transition:.3s;border-radius:0}
+select option{color:#111}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+textarea{resize:vertical;min-height:120px}
+.honey{position:absolute;left:-9999px;opacity:0}
+.note{font-size:.78rem;color:rgba(246,242,234,.5);margin-top:18px}
+.status{margin-top:22px;font-size:.95rem;display:none;padding:16px 18px;border-left:2px solid var(--gold);background:rgba(198,161,91,.08)}
+.status.show{display:block}
+.status.err{border-color:#d46a6a;background:rgba(212,106,106,.09)}
+
+/* FOOTER */
+footer{background:#070d19;color:rgba(246,242,234,.6);padding:70px 0 34px}
+.foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:44px;border-bottom:1px solid var(--line-dark)}
+.foot .brand{margin-bottom:18px}
+.foot p{font-size:.88rem;max-width:340px}
+.foot ul{list-style:none}
+.foot li{margin-bottom:10px;font-size:.88rem}
+.foot li a:hover{color:var(--gold)}
+.copy{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:28px;font-size:.78rem}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+@media (max-width:980px){
+  section{padding:90px 0}
+  .hero-grid,.about-grid,.std-grid,.contact-grid,.aud-grid{grid-template-columns:1fr;gap:56px}
+  .seal{max-width:240px}
+  .cards{grid-template-columns:1fr 1fr}
+  .card,.card:nth-child(3n){border-right:1px solid var(--line)}
+  .card:nth-child(2n){border-right:0}
+  .card:nth-last-child(-n+3){border-bottom:1px solid var(--line)}
+  .card:nth-last-child(-n+2){border-bottom:0}
+  .steps{grid-template-columns:1fr 1fr;row-gap:56px}
+  .step:nth-child(2)::before{display:none}
+  .strip .wrap{grid-template-columns:1fr 1fr}
+  .strip .item:nth-child(3){border-left:0;padding-left:0}
+  nav ul{position:fixed;inset:0;background:var(--navy);flex-direction:column;justify-content:center;gap:30px;transform:translateX(100%);transition:transform .45s ease}
+  nav ul.open{transform:none}
+  nav a.link{font-size:1rem}
+  .burger{display:block;z-index:60}
+}
+@media (max-width:640px){
+  .wrap{width:min(1180px,100% - 36px)}
+  .cards{grid-template-columns:1fr}
+  .card,.card:nth-child(n){border-right:0;border-bottom:1px solid var(--line)}
+  .card:last-child{border-bottom:0}
+  .steps{grid-template-columns:1fr}
+  .step::before{display:none}
+  .row{grid-template-columns:1fr;gap:0}
+  form{padding:34px 24px}
+  .panel{padding:44px 28px}
+  .strip .wrap{grid-template-columns:1fr}
+  .strip .item,.strip .item:nth-child(3){border-left:0;padding-left:0;border-top:1px solid var(--line-dark)}
+  .strip .item:first-child{border-top:0}
+  .hero{padding-top:130px}
+  .scroll-hint{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Promise Bassey Executive Search">
+      <b>Promise Bassey</b><span>Executive Search</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul id="menu">
+        <li><a class="link" href="#about">The Firm</a></li>
+        <li><a class="link" href="#practices">Practices</a></li>
+        <li><a class="link" href="#process">Method</a></li>
+        <li><a class="link" href="#audiences">Clients &amp; Leaders</a></li>
+        <li><a class="btn solid nav-cta" href="#contact">Brief a Search</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow rv">Retained Executive Search</span>
+      <h1 class="rv d1">The right leader changes <em>everything</em> that follows.</h1>
+      <p class="lead rv d2">Promise Bassey Executive Search identifies, assesses and secures senior leaders for organisations where a wrong appointment is not an option. Every mandate is handled personally, discreetly and to completion.</p>
+      <div class="hero-actions rv d3">
+        <a href="#contact" class="btn solid">Brief a Search
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        <a href="#audiences" class="btn ghost">Confidential Career Enquiry</a>
+      </div>
+    </div>
+    <div class="seal rv d2" aria-hidden="true">
+      <div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div>
+      <div class="mono"><div>PB<small>Executive Search</small></div></div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="item rv"><b>Retained</b><span>Exclusive, outcome-focused mandates</span></div>
+    <div class="item rv d1"><b>Confidential</b><span>Discretion at every stage of the search</span></div>
+    <div class="item rv d2"><b>Direct</b><span>Senior-led from brief to offer</span></div>
+    <div class="item rv d3"><b>Verified</b><span>Every shortlisted leader fully referenced</span></div>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow rv">The Firm</span>
+      <h2 class="rv d1" style="margin-top:22px">Search built on <em>judgement,</em> not volume.</h2>
+      <figure class="portrait rv d2">
+        <img src="portrait.jpg" alt="Promise Bassey, Founder and Lead Consultant" width="600" height="600" loading="lazy" onerror="this.parentNode.style.display='none'">
+        <figcaption>Promise Bassey<span>Founder &amp; Lead Consultant</span></figcaption>
+      </figure>
+    </div>
+    <div class="about-copy">
+      <p class="rv">Leadership hiring is decided by a handful of people. The market's strongest executives are rarely looking, rarely visible and rarely moved by a job description. Reaching them takes standing, preparation and a conversation worth their attention.</p>
+      <p class="rv d1">Promise Bassey Executive Search works with a deliberately limited number of mandates at any time. That discipline is what lets each search receive full research, direct approach to the right people and a shortlist built on evidence of performance rather than polish of presentation.</p>
+      <p class="rv d2">Clients receive a single accountable lead consultant. Leaders receive an honest read on the role, the organisation and where the opportunity sits in their career.</p>
+      <div class="sign rv d3"><b>Promise Bassey</b><span>Founder &amp; Lead Consultant</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="practices" id="practices">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">Practices</span>
+      <h2 class="rv d1">Where we recruit leaders.</h2>
+      <p class="rv d2">Focused search coverage across the functions and sectors where leadership quality decides performance.</p>
+    </div>
+    <div class="cards">
+      <article class="card rv"><span class="num">01</span><h3>C-Suite &amp; Board</h3><p>Chief executives, managing directors and non-executive directors for growth-stage and established organisations.</p></article>
+      <article class="card rv d1"><span class="num">02</span><h3>Finance &amp; Risk</h3><p>CFOs, financial controllers, heads of risk and compliance leaders trusted with capital and accountability.</p></article>
+      <article class="card rv d2"><span class="num">03</span><h3>Technology &amp; Digital</h3><p>CTOs, engineering heads, product leaders and digital transformation executives building what comes next.</p></article>
+      <article class="card rv"><span class="num">04</span><h3>Commercial &amp; Growth</h3><p>Chief commercial officers, sales directors and marketing leaders who convert strategy into revenue.</p></article>
+      <article class="card rv d1"><span class="num">05</span><h3>Operations &amp; Supply Chain</h3><p>Chief operating officers and operational leaders who run complex businesses with precision.</p></article>
+      <article class="card rv d2"><span class="num">06</span><h3>People &amp; Culture</h3><p>Chief people officers and HR directors shaping organisation design, talent strategy and culture.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">Method</span>
+      <h2 class="rv d1">A disciplined path from brief to appointment.</h2>
+      <p class="rv d2">Four stages, each with a defined output. Clients always know where the search stands.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="dot">I</div><h3>Define</h3><p>We take the brief apart: the mandate, the success measures, the team the leader inherits and the profile that fits. The result is a written search specification you approve.</p></div>
+      <div class="step rv d1"><div class="dot">II</div><h3>Map</h3><p>Structured market research identifies every credible leader in scope, including those not actively looking. The target list is built from performance, not from who is easiest to reach.</p></div>
+      <div class="step rv d2"><div class="dot">III</div><h3>Engage</h3><p>Direct, personal approaches to selected leaders. Candidates are assessed in depth against the specification and presented as a short, fully reasoned shortlist.</p></div>
+      <div class="step rv d3"><div class="dot">IV</div><h3>Secure</h3><p>Reference verification, offer structuring and negotiation, then continued support through the first months so the appointment delivers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="standards">
+  <div class="wrap std-grid">
+    <div>
+      <span class="eyebrow rv">Standards</span>
+      <h2 class="rv d1" style="margin:22px 0 22px">What every mandate is held to.</h2>
+      <p class="rv d2" style="color:var(--muted);font-size:1.05rem;max-width:460px">These are not aspirations. They are the working rules behind each search we accept.</p>
+    </div>
+    <ul class="std-list">
+      <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="4" y="10" width="16" height="10" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><h3>Absolute discretion</h3><p>Client identities and candidate details stay protected. Nothing is shared without explicit consent.</p></div></li>
+      <li class="rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg><div><h3>Evidence over impression</h3><p>Shortlists rest on verified track record, structured assessment and thorough referencing.</p></div></li>
+      <li class="rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6l8-3z"/></svg><div><h3>Accountable to the end</h3><p>One senior consultant owns the search personally. No hand-offs, no diluted attention.</p></div></li>
+      <li class="rv d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg><div><h3>Fit that lasts</h3><p>We assess leadership style, culture and motivation as seriously as capability, so appointments endure.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="aud" id="audiences">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">Two Audiences, One Standard</span>
+      <h2 class="rv d1">For those who hire. For those who lead.</h2>
+    </div>
+    <div class="aud-grid">
+      <div class="panel rv">
+        <span class="eyebrow">For Organisations</span>
+        <h3>Brief a search</h3>
+        <p>Whether you are replacing a leader, building a function or entering a new market, we deliver a qualified shortlist built against your exact requirements.</p>
+        <ul>
+          <li>Retained search with a defined scope and timeline</li>
+          <li>Confidential and replacement searches</li>
+          <li>Market intelligence on talent and compensation</li>
+        </ul>
+        <a href="#contact" class="btn ghost">Start a Brief
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="panel alt rv d1">
+        <span class="eyebrow">For Senior Professionals</span>
+        <h3>Register in confidence</h3>
+        <p>Senior roles are filled through search long before they are advertised. Register your profile and you will be considered for mandates that match your experience.</p>
+        <ul>
+          <li>Private, never forwarded without your consent</li>
+          <li>Honest guidance on role, organisation and fit</li>
+          <li>Access to mandates not advertised publicly</li>
+        </ul>
+        <a href="#contact" class="btn ghost2">Register Interest
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow rv">Contact</span>
+      <h2 class="rv d1">Open a confidential enquiry.</h2>
+      <p class="intro rv d2">Share the essentials and your message goes directly to Promise Bassey. Every enquiry is read personally and answered by email.</p>
+      <div class="detail rv"><span>Email</span><a href="mailto:promise@executivesearch.com">promise@executivesearch.com</a></div>
+      <div class="detail rv d1"><span>Firm</span><p>Promise Bassey Executive Search</p></div>
+    </div>
+
+    <form id="enquiry" class="rv d1" action="https://formsubmit.co/headhunter.search.cosultant@gmail.com" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="New enquiry | Promise Bassey Executive Search">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="row">
+        <div class="field"><label for="name">Full name</label><input id="name" name="Name" type="text" required autocomplete="name"></div>
+        <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="org">Organisation / Current role</label><input id="org" name="Organisation or Role" type="text" autocomplete="organization"></div>
+        <div class="field"><label for="type">I am writing as</label>
+          <select id="type" name="Enquiry Type" required>
+            <option value="">Select</option>
+            <option>An organisation briefing a search</option>
+            <option>A senior professional</option>
+            <option>Other</option>
+          </select></div>
+      </div>
+      <div class="field"><label for="msg">Message</label><textarea id="msg" name="Message" required placeholder="The role, the sector, the timeline, or your background."></textarea></div>
+      <button type="submit" class="btn solid" id="sendBtn">Send Enquiry
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+      <p class="note">Your details are used solely to respond to your enquiry.</p>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="brand"><b>Promise Bassey</b><span>Executive Search</span></div>
+        <p>Retained executive search for organisations that depend on the quality of their leadership.</p>
+      </div>
+      <ul>
+        <li><a href="#about">The Firm</a></li>
+        <li><a href="#practices">Practices</a></li>
+        <li><a href="#process">Method</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <ul>
+        <li><a href="mailto:promise@executivesearch.com">promise@executivesearch.com</a></li>
+      </ul>
+    </div>
+    <div class="copy">
+      <span>&copy; <span id="yr">2026</span> Promise Bassey Executive Search. All rights reserved.</span>
+      <span>Confidential &middot; Retained &middot; Personal</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var h=document.querySelector('header');
+  function onScroll(){h.classList.toggle('scrolled',window.scrollY>40)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var b=document.getElementById('burger'),m=document.getElementById('menu');
+  function toggle(open){b.classList.toggle('open',open);m.classList.toggle('open',open);b.setAttribute('aria-expanded',open)}
+  b.addEventListener('click',function(){toggle(!m.classList.contains('open'))});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggle(false)})});
+
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  var f=document.getElementById('enquiry'),st=document.getElementById('status'),btn=document.getElementById('sendBtn');
+  function show(msg,err){st.textContent=msg;st.className='status show'+(err?' err':'')}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){f.reportValidity();return}
+    if(f.querySelector('[name=_honey]').value){return}
+    btn.disabled=true;btn.style.opacity=.6;
+    fetch('https://formsubmit.co/ajax/headhunter.search.cosultant@gmail.com',{
+      method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)
+    }).then(function(r){return r.json()}).then(function(d){
+      if(d.success==='true'||d.success===true){f.reset();show('Thank you. Your enquiry has been received and will be answered personally by email.')}
+      else{throw new Error('fail')}
+    }).catch(function(){
+      show('Your message could not be sent. Please email promise@executivesearch.com directly.',true)
+    }).finally(function(){btn.disabled=false;btn.style.opacity=1});
+  });
+})();
+</script>
+</body>
+</html>
